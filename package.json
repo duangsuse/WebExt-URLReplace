@@ -1,0 +1,11 @@
+{
+  "name": "URLReplace",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bash build.sh",
+    "clean": "rm -rf firefox",
+    "package": "npm run build && cd firefox; zip -r plugin.zip *"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
