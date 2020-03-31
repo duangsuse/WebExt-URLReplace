@@ -43,11 +43,17 @@ function urlPatterns(map) {
   });
 }
 
+function refreshUrlReplace() {
 browser.storage.sync.get("mapping").then(it => {
   mapping = it.mapping || {};
-  let urlPats = urlPatterns(mapping); console.log(mapping, urlPats);
+  let urlPats = mapping["<use_all_urls>"]? ["<all_urls>"] : urlPatterns(mapping); console.log(mapping, urlPats);
   if (mapping.length != 0) updateRequestRouter(req => {
     let res = tryRewriteUrl(req);
     return (res!=null)? {redirectUrl: res} : {};
   }, urlPats);
 });
+
+
+} //refreshUrlReplace
+
+refreshUrlReplace();
