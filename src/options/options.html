@@ -4,22 +4,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FoxAuth</title>
-  <meta name="description" content="FoxAuth Authenticator">
+  <title>URL Replace</title>
+  <meta name="description" content="URL Replace using regex">
   <meta content="telphone=no, email=no" name="format-detection">
   <link rel="icon" href="../icons/icon48.png">
   <link rel="shortcut icon" href="../icons/icon128.png" type="image/x-icon">
   <script src="lib.js"></script>
   <script src="options.js"></script>
+  <link rel="stylesheet" href="darkmode.css"></style>
 </head>
 
 <body>
-<div id="settings" align="center">
+<div id="settings">
   <h2>URL Replace <button id="save">Save</button> <button id="add">Add</button></h2>
   <table>
     <thead><td>Format</td> <td>Destination</td></thead>
     <tbody id="replace-dict"></tbody>
   </table>
+  <a id="add_use_all_urls">Click to use &lt;all_urls&gt;</a> if you included special patterns like <code>(.*).com -> \1.org</code>
 </div>
 </body>
 

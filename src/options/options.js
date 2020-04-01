@@ -32,9 +32,13 @@ const tableReplaceDict = helem("replace-dict");
 
 const dict = new UIMapConfig(tableReplaceDict);
 
+const add = (k, v) => tableReplaceDict.appendChild(dict.renderRow([k, v]));
+
 helem("save").onclick = () => { sync.set({ mapping: dict.scrape() }); backgroundPage.refreshUrlReplace(); };
 
-helem("add").onclick = () => tableReplaceDict.appendChild(dict.renderRow(["", ""]));
+helem("add").onclick = () => add("", "");
+
+helem("add_use_all_urls").onclick = () => add("<use_all_urls>", "true");
 
 sync.get("mapping").then(it => dict.render(it.mapping || {}));
 

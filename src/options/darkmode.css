@@ -1,0 +1,35 @@
+body {
+  margin: auto;
+}
+body { min-height: 250px; } //see chrome://mozapps/content/extensions/aboutaddons.css:505
+
+:root {
+  --background-color: #fff;
+  --text-color: #202124;
+  --secondary-text-color: #5f6368;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #202023;
+    --text-color: #e8eaed;
+    --secondary-text-color: #9aa0a6;
+  }
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+input, textarea, button {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--input-border-color);
+}
+
+input:not([type='checkbox']),
+textarea {
+  border: 1px solid;
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
