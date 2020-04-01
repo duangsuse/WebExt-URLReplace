@@ -14,7 +14,8 @@ mkdir firefox
 
 # Build
 cp -r src/icons \
-      src/url_replace.js \
+      src/_locales \
+      src/*.js \
       src/options \
       LICENSE \
       src/manifest.json \

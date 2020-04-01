@@ -1,0 +1,23 @@
+{
+  "extName": {
+    "message": "链接模式化替换",
+    "description": "Extension Name"
+  },
+  "extDesc": {
+    "message": "利用正则表达式用户自定义模式化映射链接",
+    "description": "Extension Description"
+  },
+  "Nouns": {
+    "message": "URL 替换/格式/目标"
+  },
+  "Verbs": {
+    "message": "添加/保存",
+    "description": "Verb shown on action UIs"
+  },
+  "if you included special patterns like": {
+    "message": "如果你使用了一些特别的模式，比如："
+  },
+  "Click to use <all_urls>": {
+    "message": "点击使用 <all_urls> 以尝试匹配所有访问的链接。"
+  }
+}

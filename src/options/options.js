@@ -1,5 +1,6 @@
 // == App ==
 const sync = browser.storage.sync;
+const gettext = browser.i18n.getMessage;
 const backgroundPage = browser.extension.getBackgroundPage();
 
 class UIMapConfig { constructor(e) { this.e = e; }
@@ -27,6 +28,12 @@ class UIMapConfig { constructor(e) { this.e = e; }
   }
 }
 
+const
+  template_noun = "URL Replace/Format/Destination".split("/"),
+  template_verb = "Add/Save".split("/");
+const nouns = associateByIndex(template_noun, gettext("Nouns").split("/"));
+const verbs = associateByIndex(template_verb, gettext("Verbs").split("/")); //< logic could be extracted
+
 document.addEventListener("DOMContentLoaded", () => {
 const tableReplaceDict = helem("replace-dict");
 
@@ -42,4 +49,5 @@ helem("add_use_all_urls").onclick = () => add("<use_all_urls>", "true");
 
 sync.get("mapping").then(it => dict.render(it.mapping || {}));
 
+translateAllIn(document.body, nouns, verbs, gettext);
 });

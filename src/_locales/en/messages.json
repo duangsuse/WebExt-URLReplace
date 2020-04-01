@@ -1,0 +1,19 @@
+{
+  "extName": {
+    "message": "URL Replace",
+    "description": "Extension Name"
+  },
+  "extDesc": {
+    "message": "Replace URL by pattern mapping",
+    "description": "Extension Description"
+  },
+  "Nouns": {
+    "message": "URL Replace/Format/Destination"
+  },
+  "Verbs": {
+    "message": "Add/Save",
+    "description": "Verb shown on action UIs"
+  },
+  "if you included special patterns like": { "message": "<" },
+  "Click to use <all_urls>": { "message": "<" }
+}
