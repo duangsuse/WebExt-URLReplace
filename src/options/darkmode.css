@@ -18,18 +18,17 @@ body { min-height: 250px; } //see chrome://mozapps/content/extensions/aboutaddon
 }
 
 body {
-  color: var(--text-color);
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 input, textarea, button {
   background-color: var(--background-color);
   color: var(--text-color);
-  border: 1px solid var(--input-border-color);
+  border: 1px solid var(--text-color);
 }
 
 input:not([type='checkbox']),
 textarea {
-  border: 1px solid;
   font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }

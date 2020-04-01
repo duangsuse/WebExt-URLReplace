@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "URL Replace",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Replace URL by pattern mapping",
   "icons": {
     "48": "icons/icon48.png",

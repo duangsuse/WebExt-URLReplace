@@ -18,7 +18,15 @@ function format(str, replace, prefix = '\\' , take = view => /(\d+)/.exec(view)[
 const REGEX_TRIM = /(\([^\)]*)|\^|\$|\*|\(|\)|\[|\{|\\|\|/g; // rest metachar: .+?-
 const trimRegex = s => s.replace(REGEX_TRIM, "");
 
-let mapping;
+let mapping; //< globals
+
+function updateRequestRouter(fn, urls) {
+  const listeners = browser.webRequest.onBeforeRequest;
+  if (listeners.hasListener(fn)) listeners.removeListener(fn);
+
+  listeners.addListener(fn, {urls: urls}, ["blocking"]);
+}
+
 
 function tryRewriteUrl(request) {
   const url = request.url;
@@ -27,13 +35,6 @@ function tryRewriteUrl(request) {
     if (match != null) { return format(dst, i => match[i]); }
   }
   return null;
-}
-
-function updateRequestRouter(fn, urls) {
-  const listeners = browser.webRequest.onBeforeRequest;
-  if (listeners.hasListener(fn)) listeners.removeListener(fn);
-
-  listeners.addListener(fn, {urls: urls}, ["blocking"]);
 }
 
 function urlPatterns(map) {

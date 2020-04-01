@@ -2,7 +2,7 @@ function element(tagName, config, ...childs) {
   let tag = document.createElement(tagName)
   config(tag)
   for (let child of childs) tag.appendChild(child)
-  return tag
+  return tag;
 }
 
 function configured(...configs) {
@@ -21,7 +21,7 @@ Object.entries = Object.entries || function entries(obj) {
   let entrys = [];
   for (let key in obj) {
     if (!obj.hasOwnProperty(key) || !obj.propertyIsEnumerable(key)) continue;
-    entrys.push([key, obj[key]]);
+    entrys.push([key, obj[key]])
   }
   return entrys;
 };
