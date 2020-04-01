@@ -1,7 +1,7 @@
 body {
   margin: auto;
 }
-body { min-height: 250px; } //see chrome://mozapps/content/extensions/aboutaddons.css:505
+body { min-height: 250px; } /* see chrome://mozapps/content/extensions/aboutaddons.css:505 */
 
 :root {
   --background-color: #fff;
